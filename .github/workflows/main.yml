@@ -24,7 +24,7 @@ jobs:
           # 'sshuser' নামে নতুন ব্যবহারকারী তৈরি করুন এবং sudo ক্ষমতা দিন
           sudo useradd -m -s /bin/bash sshuser
           echo "sshuser:$PASSWORD" | sudo chpasswd
-          sudo usmod -aG sudo sshuser
+          sudo usermod -aG sudo sshuser
           
           # লগইন তথ্য GitHub পরিবেশে সংরক্ষণ করুন
           echo "SSH_CREDS=User: sshuser | Password: $PASSWORD" >> $GITHUB_ENV
